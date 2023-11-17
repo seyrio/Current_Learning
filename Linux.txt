@@ -1,0 +1,8 @@
+Bash Scripting
+    Ping Sweeper: Sweep entire network and ping devices to see if they are alive or dead 
+    ping <ip_address> -c 1 : -c stands for count of packets
+    grep : find the specific line 
+    cut -d " " -f 4 : -d -> delimiter and -f -> field 
+    cut with given delimiter and give number field as output
+    tr -d ":" -> translate removes the delimiter 
+    for ip in $(cat ip.txt); do nmap $ip & done 

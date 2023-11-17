@@ -1,0 +1,26 @@
+Operating system: Virtualization, Concurrency, and Persistence
+
+Operating system is a system software program which is in-charge of making sure the system operates correctly, efficiently, and in easy to use manner
+OS takes a physical resource and transform it into a virtual form of itself
+    physical resources like processor, memory, disk
+    virtual form is more powerful, general, and easy to use
+    sometimes, os is referred as virtual machine
+
+System calls allow user to tell the OS what to do by providing some interface like API, standard library, etc
+    raises the hardware privilege level via trap instruction by switching to kernel mode 
+    user mode has limited and restricted privilege 
+OS manages resources -> have policies and mechanisms
+policies like scheduling algorithms, mechanisms answers how -> timer
+
+Virtualizing the CPU 
+    A system can have a single processor (CPU) but can have multiple virtual processors
+    Allowing many programs to seemingly run at once -> turning a single CPU into a seemingly multiple number of CPU
+
+Virtualizing the Memory 
+    Physical memory is array of bytes -> each location has an address
+    read, write memory to load and store instructions
+    program keeps all its data in memory 
+    each process access its own virtual address space -> os maps this vas onto physical memory
+
+OS design goals:
+    Abstraction, high performance, security, reliability

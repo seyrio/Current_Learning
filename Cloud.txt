@@ -1,0 +1,8 @@
+5 essential characteristics:
+    1. On-demand self-service: access cloud resources whenever required
+    2. Broad Network Access: cloud computing resources can be accessed through the network
+    3. Resource Pooling: consumer saves cost through shared resources
+    4. Rapid Elasticity: increase or decrease resources as per demand
+        scaled up in vertical scaling or scaled out in horizontal scaling
+    5. Measured Service: pay for only what you use or reserve
+        utility model of billing where you are charged after the usage

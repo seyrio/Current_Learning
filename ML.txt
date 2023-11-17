@@ -1,0 +1,20 @@
+Artificial Intelligence:
+    Algorithms or Methods enabled by 
+    Constraints exposed by
+    Representations that support
+    Models targeted at 
+    Thinking Perception and Action
+    Connected through loops
+
+Generate and Test approach:
+    Generate solutions and test for results
+
+Problem reduction tree | And Or tree | Goal tree: Tells us possible solutions in the form of a n-ary tree
+
+Machine Learning: Field of study that gives computer the ability to learn without being explicitly programmed.
+Supervised Learning: 
+    Input X and Labels Y -> Mapping X to Y
+Unsupervised Learning:
+    Input X with no labels -> Find patterns, figure out what groups belong together
+Deep Learning: Neural Networks
+Reinforcement Learning: Reward System
