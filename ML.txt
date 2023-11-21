@@ -18,3 +18,52 @@ Unsupervised Learning:
     Input X with no labels -> Find patterns, figure out what groups belong together
 Deep Learning: Neural Networks
 Reinforcement Learning: Reward System
+
+Linear Regression:
+    Input features (x)
+    Parameters (theta)
+    Output (y)
+
+    Create hypothesis h which is a function of input features that outputs the prediction
+    Cost function J which is a function of theta that calculates the (sum of squared error between hypothesis and output)/2 (divide by 2 for simple math calculations)
+    Minimize the cost function -> use gradient descent algorithm -> start from a point and find the minima 
+
+    DERIVATIVE OF A FUNCTION DEFINES THE DIRECTION OF STEEPEST DESCENT 
+    if you think about the contours of a function, the direction of steepest descent is always at 90 degrees, is always orthogonal to contour direction. 
+    for learning rate: if it is too small, it will take a lot of iterations, if it is too big, it will miss the minima, so just experiment with values, generally start with 0.01. 
+    try learning rate in exponential scale 
+
+    Gradient descent algorithm for minimizing cost function:
+        theta(j) := theta(j) - alpha * sum of training sets of partial derivate of cost function wrt theta(j) where theta(j) is the j-th feature 
+    repeat till convergence 
+    as we run gradient descent, we change the values of theta to fit the training set 
+    alpha is subtracted instead of added cause we need to find minima, so we need to go downhill ie subtract values 
+    this is also known as BATCH GRADIENT DESCENT because of using all training examples as a batch of data to process 
+
+    CONS OF BATCH GRADIENT DESCENT:
+    for every single step, you need to read through entire training data set to update the parameter just once which makes it unsuitable for large datasets. 
+    computationally expensive and time consuming for large datasets 
+
+    Alternative for batch gradient descent: STOCHASTIC GRADIENT DESCENT 
+    update the theta according to one training example and update and run over all the training examples one by one 
+    they won't ever quite converge but oscillate around the global minima following a noisy random path as it is fixing h acc to single examples 
+    good for large dataset as it allows your implementation much faster progress 
+
+    Aside from batch and stochastic gradient descent, we can use NORMAL EQUATION.
+    it is only valid for linear regression to reach global optimum without needing to use an iterative algorithm for optimal values of theta 
+    set the derivative of cost function wrt theta equal to zero (notation is an inverted triangle with subscript theta concatenated with J(theta)) 
+    Xtranspose X theta = Xtranspose Y 
+    optimal value of theta = (Xtranspose X)inverse Xtranspose Y 
+    if x is non-invertible that means we have redundant features, that the features are linearly dependent, pseudo inverse can be used 
+
+    THE MAXIMA AND MINIMA OF A FUNCTION IS WHERE THE DERIVATIVE IS ZERO 
+
+A is a square matrix:
+    tr A = trace of A = tr(A) = sum of diagonal entries 
+    tr A = tr(A transpose) 
+
+    if f(A) = tr AB then, derivative of f(A) wrt A = B transpose 
+    tr AB = tr BA 
+    tr ABC = tr CAB (cyclic permutation property, remove one from the end and insert it in front, it remains the same) 
+
+    the derivative of trace of AAtransposeC wrt A = CA + CtransposeA (kind of like derivative of a square c wrt a is 2ac but in matrix form) 

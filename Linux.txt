@@ -6,3 +6,14 @@ Bash Scripting
     cut with given delimiter and give number field as output
     tr -d ":" -> translate removes the delimiter 
     for ip in $(cat ip.txt); do nmap $ip & done 
+
+Subdomain Hunting
+    crt.sh 
+    sublist3r (CLI)
+    owasp amass
+    tomnomnom httprobe
+
+Identify website technology
+    builtwith
+    wappalyzer (browser extension)
+    whatweb (CLI)
