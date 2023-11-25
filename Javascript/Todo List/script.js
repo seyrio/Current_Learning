@@ -1,36 +1,37 @@
 const taskList = document.getElementById("task-list");
-let l = localStorage.length;
+let l = 0;
 
 const addTask = (e) => {
   e.preventDefault();
   task = document.getElementById("task");
-  createTask(task.value, l);
-  localStorage.setItem(l, task.value);
-  l += 1;
-  task.value = "";
-};
-
-const deleteTask = (e) => {
-  let decision = confirm("Do you want to delete the task?");
-  if (decision) {
-    localStorage.removeItem(e.target.id);
-    e.target.remove();
+  if (task.value) {
+    while (localStorage.getItem(l)) l += 1;
+    createTask(task.value, l);
+    localStorage.setItem(l, task.value);
+    task.value = "";
   }
 };
 
-const createTask = (taskContent, lid) => {
-  newTask = document.createElement("a");
-  newTask.textContent = taskContent;
-  newTask.classList.add("list-group-item", "list-group-item-action");
-  newTask.id = lid;
+const deleteTask = (id) => {
+  localStorage.removeItem(id);
+  document.getElementById(id).remove();
+};
+
+const createTask = (taskContent, taskId) => {
+  newTask = document.createElement("div");
+  newTask.id = taskId;
+  newTask.innerHTML = `${taskContent} <button class="btn btn-dark" onclick="deleteTask(${taskId})">Delete</button>`;
+  newTask.classList.add("d-flex", "justify-content-between", "my-3");
   taskList.appendChild(newTask);
-  newTask.addEventListener("click", deleteTask);
 };
 
 const formId = document.getElementById("formId");
 formId.addEventListener("submit", addTask);
 
-for (let t = 0; t < l; t++) {
-  let currTask = localStorage.getItem(t);
-  if (currTask) createTask(currTask, t);
+for (let t = 0; t < localStorage.length; t++) {
+  let key = +localStorage.key(t);
+  if (key) {
+    let currTask = localStorage.getItem(key);
+    if (currTask) createTask(currTask, key);
+  }
 }
